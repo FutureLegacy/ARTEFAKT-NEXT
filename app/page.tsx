@@ -1,147 +1,127 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import ContactForm from '@/components/ui/ContactForm'
 import SubscribeStrip from '@/components/ui/SubscribeStrip'
 
 export const metadata: Metadata = {
   title: 'Artefakt Foundation',
-  description:
-    'Artefakt Foundation — independent documentary photography, film, and arts. Calgary · Chicago.',
+  description: 'Artefakt Foundation — independent documentary photography, film, and arts. Calgary · Chicago.',
 }
-
-const pillars = [
-  {
-    number: '01',
-    title: 'Witness',
-    label: 'Long-form documentary practice',
-    heading: 'The photograph always leads.',
-    text: 'Long-form documentary practice grounded in community trust and ethical rigor. Years, not weeks. Return visits, not parachute coverage.',
-    href: '/witness',
-    image: '/images/witness.jpg',
-  },
-  {
-    number: '02',
-    title: 'Akademy',
-    label: 'Fellowship · Academy',
-    heading: 'Teach what you practice.',
-    text: 'Fellowships for emerging documentarians. Masterclasses and lectures rooted in field practice, ethics, and visual authorship.',
-    href: '/akademy',
-    image: '/images/connect.jpg',
-  },
-  {
-    number: '03',
-    title: 'Preserve',
-    label: 'The Archive',
-    heading: 'What the photograph keeps.',
-    text: 'A permanent, publicly accessible archive of documentary work. Accessioned with consent, catalogued with care.',
-    href: '/archive',
-    image: '/images/legacy.jpg',
-  },
-  {
-    number: '04',
-    title: 'Sustain',
-    label: 'Materials Reuse · Funding Model',
-    heading: 'Nothing of value thrown away.',
-    text: 'An ethical materials-reuse and electronics-recycling operation that funds the foundation’s programming. Stewardship, not charity.',
-    href: '/sustain',
-    image: '/images/sustain.jpg',
-  },
-]
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-white">
-      <section className="min-h-screen px-6 py-10 md:px-12 md:py-16">
-        <header className="mb-20 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-neutral-400">
-          <div>Artefakt Foundation</div>
-          <div>Documentary · Film · Arts</div>
-          <div>Calgary · Chicago</div>
-        </header>
-
-        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr] md:items-end">
-          <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.25em] text-neutral-500">
-              Documentary / Archive / Education / Reuse
-            </p>
-            <h1 className="max-w-5xl text-6xl font-semibold tracking-tight md:text-8xl">
-              Documentary that stays.
-            </h1>
+    <>
+      <section className="panel panel--paper" id="masthead">
+        <div className="masthead">
+          <div className="top-meta">
+            <span>Artefakt Foundation</span>
+            <span>Documentary · Film · Arts</span>
+            <span>Calgary · Chicago</span>
           </div>
-
-          <p className="max-w-xl text-base leading-7 text-neutral-300 md:text-lg">
-            Artefakt is an independent documentary photography, film, and arts
-            organization — built from inside the practice, not alongside it. We
-            support long-form work, teach the craft, preserve the record, and
-            fund ourselves through ethical materials reuse.
-          </p>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10">
-        {pillars.map((pillar) => (
-          <article
-            key={pillar.number}
-            className="grid border-b border-white/10 md:grid-cols-2"
-          >
-            <div className="relative min-h-[360px] md:min-h-[620px]">
-              <img
-                src={pillar.image}
-                alt={`${pillar.title} — ${pillar.label}`}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="flex min-h-[360px] flex-col justify-between p-6 md:min-h-[620px] md:p-12">
-              <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-neutral-500">
-                <span>{pillar.number} · {pillar.title}</span>
-                <span>{pillar.label}</span>
-              </div>
-
-              <div>
-                <p className="mb-4 text-xs uppercase tracking-[0.25em] text-neutral-500">
-                  Pillar {pillar.number} / 04
-                </p>
-                <h2 className="mb-6 max-w-xl text-4xl font-semibold tracking-tight md:text-6xl">
-                  {pillar.heading}
-                </h2>
-                <p className="mb-8 max-w-xl text-base leading-7 text-neutral-300">
-                  {pillar.text}
-                </p>
-                <Link
-                  href={pillar.href}
-                  className="inline-block border border-white/30 px-5 py-3 text-xs uppercase tracking-[0.2em] text-white transition hover:bg-white hover:text-black"
-                >
-                  Enter {pillar.title}
-                </Link>
-              </div>
-            </div>
-          </article>
-        ))}
-      </section>
-
-      <section className="grid gap-8 px-6 py-16 md:grid-cols-2 md:px-12">
-        <div>
-          <p className="mb-4 text-xs uppercase tracking-[0.25em] text-neutral-500">
-            Founded 2026
-          </p>
-          <p className="max-w-2xl text-lg leading-8 text-neutral-300">
-            Founded by Jon Lowenstein — Guggenheim Fellow, National Geographic
-            Explorer, TED Senior Fellow, founding member of NOOR Images. Based
-            in Calgary, Treaty 7 Territory, and Chicago.
-          </p>
-        </div>
-
-        <div>
-          <SubscribeStrip />
-          <div className="mt-8">
-            <ContactForm />
+          <div className="main">
+            <h1 className="display">Documentary<br />that <em>stays.</em></h1>
+            <p className="lede">Artefakt is an independent documentary photography, film, and arts organization — built from inside the practice, not alongside it. We support the long-form work, teach the craft to the next practitioners, preserve the record, and fund ourselves through an ethical materials-reuse operation. Four pillars. One archive. Two cities.</p>
+          </div>
+          <div className="bottom-meta">
+            <span>Scroll ↓</span>
+            <span>04 Pillars</span>
+            <span>01 / 06</span>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-white/10 px-6 py-8 text-xs uppercase tracking-[0.2em] text-neutral-500 md:px-12">
-        Active programming in Calgary and Chicago. Artefakt Foundation © 2026
-      </footer>
-    </main>
+      <section className="panel" aria-labelledby="home-witness">
+        <Image src="/images/witness.jpg" alt="Witness — long-form documentary practice." fill className="panel-image" priority />
+        <div className="overlay overlay--meta">
+          <span className="pillar-code">01 · WITNESS</span>
+          <span className="rule" aria-hidden="true" />
+          <span>The photograph always leads</span>
+        </div>
+        <div className="overlay overlay--content">
+          <span className="label">Pillar 01 / 04</span>
+          <h2 id="home-witness">Work that <em>earns</em> its access.</h2>
+          <p className="body">Long-form documentary practice grounded in community trust and ethical rigor. Years, not weeks. Return visits, not parachute coverage.</p>
+          <p className="caption">→ <Link href="/witness">Enter Witness</Link></p>
+        </div>
+        <div className="overlay overlay--stamp"><div>01 / 04</div><div>Long-Form · Ongoing</div></div>
+      </section>
+
+      <section className="panel" aria-labelledby="home-akademy">
+        <Image src="/images/connect.jpg" alt="Akademy — fellowship and academy." fill className="panel-image" />
+        <div className="overlay overlay--meta">
+          <span className="pillar-code">02 · AKADEMY</span>
+          <span className="rule" aria-hidden="true" />
+          <span>Fellowship · Academy</span>
+        </div>
+        <div className="overlay overlay--content">
+          <span className="label">Pillar 02 / 04</span>
+          <h2 id="home-akademy">Teach what you <em>practice.</em></h2>
+          <p className="body">Fellowships for emerging documentarians. Masterclasses and lectures — Bearing Witness — taught by Kiana Hayeri, Amber Bracken, Kitra Cahana, Carlos Javier Ortiz, and Darcy Padilla.</p>
+          <p className="caption">→ <Link href="/akademy">Enter Akademy</Link></p>
+        </div>
+        <div className="overlay overlay--stamp"><div>02 / 04</div><div>Spring Intake · Fall Season</div></div>
+      </section>
+
+      <section className="panel" aria-labelledby="home-preserve">
+        <Image src="/images/legacy.jpg" alt="Preserve — the permanent archive." fill className="panel-image" />
+        <div className="overlay overlay--meta">
+          <span className="pillar-code">03 · PRESERVE</span>
+          <span className="rule" aria-hidden="true" />
+          <span>The Archive</span>
+        </div>
+        <div className="overlay overlay--content">
+          <span className="label">Pillar 03 / 04</span>
+          <h2 id="home-preserve">What the photograph <em>keeps.</em></h2>
+          <p className="body">A permanent, publicly accessible archive of documentary work. Accessioned with consent, catalogued with care.</p>
+          <p className="caption">→ <Link href="/preserve">Enter Preserve</Link></p>
+        </div>
+        <div className="overlay overlay--stamp"><div>03 / 04</div><div>Public · By Appointment</div></div>
+      </section>
+
+      <section className="panel" aria-labelledby="home-sustain">
+        <Image src="/images/sustain.jpg" alt="Sustain — ethical materials reuse." fill className="panel-image" />
+        <div className="overlay overlay--meta">
+          <span className="pillar-code">04 · SUSTAIN</span>
+          <span className="rule" aria-hidden="true" />
+          <span>Materials Reuse · Funding Model</span>
+        </div>
+        <div className="overlay overlay--content">
+          <span className="label">Pillar 04 / 04</span>
+          <h2 id="home-sustain">Nothing of value <em>thrown away.</em></h2>
+          <p className="body">An ethical materials-reuse and electronics-recycling operation that funds the foundation's programming. Stewardship, not charity.</p>
+          <p className="caption">→ <Link href="/sustain">Enter Sustain</Link></p>
+        </div>
+        <div className="overlay overlay--stamp"><div>04 / 04</div><div>Live · Calgary</div></div>
+      </section>
+
+      <section className="panel panel--colophon" id="colophon">
+        <div className="colophon-grid">
+          <div className="col-head">
+            <span>Artefakt Foundation</span>
+            <span>06 / 06</span>
+          </div>
+          <div className="col-block">
+            <h3>Founded 2026</h3>
+            <p>Founded by Jon Lowenstein — Guggenheim Fellow, National Geographic Explorer, TED Senior Fellow, founding member of NOOR Images. Based in Calgary (Treaty 7 Territory) and Chicago.</p>
+            <p style={{ marginTop: 16 }}><Link href="/about">About the Foundation →</Link></p>
+            <div style={{ marginTop: 24 }}>
+              <h3>Stay in Touch</h3>
+              <SubscribeStrip />
+            </div>
+          </div>
+          <div className="col-block">
+            <h3>Get in Touch</h3>
+            <p>For inquiries regarding programs, archive access, partnerships, press, or donations.</p>
+            <ContactForm source="home" />
+          </div>
+          <div className="col-foot">
+            <span>Active programming in Calgary and Chicago.</span>
+            <span>artefakt.foundation</span>
+            <span>© 2026</span>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
